@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>hello</title>
+</head>
+<body>
+Hello, world~~
+</body>
+
+<script type="text/javascript">
+
+    let url = '/local';
+    let data = {nowTime: '2019-08-09 00:00:00', nowDate: '2019-08-09'};
+
+    fetch(url, {
+        method: 'POST',
+        body: JSON.stringify(data),
+        headers: new Headers({
+            'Content-Type': 'application/json'
+        })
+    })
+        .then(res => res.json())
+        .catch(error => console.error('Error:', error))
+        .then(response => console.log('Success:', response));
+
+</script>
+</html>
